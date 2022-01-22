@@ -2,9 +2,11 @@
 
 
 :root {
-  --primary-white: white;
-  --primary-orange: orange;
-  --primary-dark: rgba(255,255,255, 0)
+  --primary-white: #ffffff;
+  --primary-orange: #ffa500;
+  --primary-dark: #ffffff00;
+  --primary-red: #d44c2a;
+  --primary-hover-red: #ff0000;
 }
 
 body{
@@ -14,8 +16,18 @@ body{
 
 
 /* NAVBAR */
+nav{
+  z-index: 2;
+}
+
 .logo{
   width: 5.25rem;
+}
+
+@media(max-width: 660px){
+  .logo{
+    width: 4rem;
+  }
 }
 
 /* MENU LINKS */
@@ -49,4 +61,93 @@ nav ul li{
 
 .navbar-nav > li > a:hover{
   border-top: 0.1875rem solid var(--primary-orange) !important;
+}
+
+/* HEADER */
+.Header-wraper{
+  position: relative;
+  background: url(james-donaldson-toPRrcyAIUY-unsplash.jpg);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.main-info{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+      /* this can also be used to center it */
+
+  /* width: 100%;
+  top: 100px; */
+  /* left: 50%; */
+  /* transform: translate(-50, -50); */
+}
+
+.main-info h1 {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+}
+
+@media(max-width: 760px) {
+  .main-info h1 {
+    font-size: 1.7rem !important;
+  }
+}
+
+/* TYPED TEXT */
+.typed-text{
+  font-size: 2rem;
+  color: var(--primary-orange)
+}
+
+@media(max-width: 760px) {
+  .typed-text {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* HEADER MAIN OFFER BOTTON */
+
+.btn-main-offer{
+  border: 1px solid var(--primary-red);
+  padding: 0.6rem 0.85rem;
+  text-transform: uppercase;
+  border-radius: 3px;
+  box-shadow: 0 3px 4px 8px var(--primary-dark);
+  color: var(--primary-orange);
+  text-decoration: none;
+  margin-top: 3rem;
+  transition: all .4s;
+
+  /* background: var(--primary-dark); */
+}
+
+.btn-main-offer:hover{
+  color: white;
+  transform: scale(1.2);
+  background-color: var(--primary-hover-red)
+}
+
+/* PARTICLES JS */
+#tsparticles{
+  position: absolute;
+  height: 100vh;
+  width: 100vh;
+  z-index: 1;
+}
+
+@media(max-width: 760px) {
+  #tsparticles{
+    display: none;
+  }
 }
